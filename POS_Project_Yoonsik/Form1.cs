@@ -9,11 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using Newtonsoft.Json;
 
 namespace POS_Project_Yoonsik
 {
     public partial class POSProgram : Form
     {
+        System.Random random = new Random();
         public POSProgram()
         {
             InitializeComponent();
@@ -23,9 +25,11 @@ namespace POS_Project_Yoonsik
                 table_Button3,
                 table_Button4,
                 table_Button5,
-                table_Button6
+                table_Button6,
+                table_Button7,
+                table_Button8,
+                table_Button9
                 };
-            
 
             foreach(var button in buttonList)
             {
@@ -44,24 +48,22 @@ namespace POS_Project_Yoonsik
             }
         }
 
-        // POS 종료 버튼 이벤트 메서드
-        private void EndButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
         private void OrderTimer_Tick(object sender, EventArgs e)
         {
             int orderCount = random.Next(1, 4); // 1~3개의 주문 생성
             for (int i = 0; i < orderCount; i++)
             {
                 var order = OrderGenerator.GenerateRandomOrder();
-                string jsonOrder = JsonConvert.SerializeObject(order, Formatting.Indented);
+                string jsonOrder = JsonConvert.SerializeObject(order, Newtonsoft.Json.Formatting.Indented);
 
                 // ListBox에 주문 추가
-                listBoxOrders.Items.Add(jsonOrder);
-                listBoxOrders.Items.Add("--------------------");
+                //listBoxOrders.Items.Add(jsonOrder);
+                //listBoxOrders.Items.Add("--------------------");
             }
         }
 
+        // POS 종료 버튼 이벤트 메서드
+        private void EndButton_Click(object sender, EventArgs e) => Application.Exit();
     }
 }

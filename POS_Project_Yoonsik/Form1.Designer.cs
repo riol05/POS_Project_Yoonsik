@@ -61,7 +61,6 @@
             this.table_Button1.TabIndex = 1;
             this.table_Button1.Text = "table1";
             this.table_Button1.UseVisualStyleBackColor = true;
-            this.table_Button1.Click += new System.EventHandler(this.EndButton_Click);
             // 
             // table_Button2
             // 
@@ -154,6 +153,8 @@
             this.EndButton.TabIndex = 18;
             this.EndButton.Text = "종료";
             this.EndButton.UseVisualStyleBackColor = false;
+            this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
+
             // 
             // POSProgram
             // 
