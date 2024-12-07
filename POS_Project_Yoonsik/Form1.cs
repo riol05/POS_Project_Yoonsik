@@ -50,7 +50,7 @@ namespace POS_Project_Yoonsik
             #region 타이머 설정
             random = new Random();
             orderTimer = new Timer();
-            orderTimer.Interval = 5000; // 1분 (60000 밀리초)
+            orderTimer.Interval = 60000; // 1분 (60000 밀리초)
             orderTimer.Tick += OrderTimer_Tick;
             orderTimer.Start();
             #endregion
