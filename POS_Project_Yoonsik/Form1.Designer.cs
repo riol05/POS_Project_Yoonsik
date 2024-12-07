@@ -39,10 +39,10 @@
             this.table_Button9 = new System.Windows.Forms.Button();
             this.table_Button6 = new System.Windows.Forms.Button();
             this.EndButton = new System.Windows.Forms.Button();
-            this.listBoxOrders = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.orderBox = new System.Windows.Forms.ListBox();
+            this.totalOrderBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // POSTitle
@@ -159,34 +159,16 @@
             this.EndButton.UseVisualStyleBackColor = false;
             this.EndButton.Click += new System.EventHandler(this.EndButton_Click);
             // 
-            // listBoxOrders
-            // 
-            this.listBoxOrders.FormattingEnabled = true;
-            this.listBoxOrders.Location = new System.Drawing.Point(12, 43);
-            this.listBoxOrders.Name = "listBoxOrders";
-            this.listBoxOrders.Size = new System.Drawing.Size(186, 164);
-            this.listBoxOrders.TabIndex = 19;
-            this.listBoxOrders.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(12, 249);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(186, 164);
-            this.checkedListBox1.TabIndex = 20;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 19);
+            this.label1.Size = new System.Drawing.Size(135, 19);
             this.label1.TabIndex = 21;
-            this.label1.Text = "주문";
+            this.label1.Text = "접수, 진행주문";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -194,10 +176,29 @@
             this.label2.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.Location = new System.Drawing.Point(12, 227);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 19);
+            this.label2.Size = new System.Drawing.Size(92, 19);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Totol 주문";
+            this.label2.Text = "Total 주문";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // orderBox
+            // 
+            this.orderBox.FormattingEnabled = true;
+            this.orderBox.ItemHeight = 12;
+            this.orderBox.Location = new System.Drawing.Point(16, 43);
+            this.orderBox.Name = "orderBox";
+            this.orderBox.Size = new System.Drawing.Size(186, 172);
+            this.orderBox.TabIndex = 23;
+            this.orderBox.Click += new System.EventHandler(this.OrderBoxClick);
+            // 
+            // totalOrderBox
+            // 
+            this.totalOrderBox.FormattingEnabled = true;
+            this.totalOrderBox.ItemHeight = 12;
+            this.totalOrderBox.Location = new System.Drawing.Point(16, 249);
+            this.totalOrderBox.Name = "totalOrderBox";
+            this.totalOrderBox.Size = new System.Drawing.Size(186, 172);
+            this.totalOrderBox.TabIndex = 24;
             // 
             // POSProgram
             // 
@@ -205,10 +206,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.totalOrderBox);
+            this.Controls.Add(this.orderBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.listBoxOrders);
             this.Controls.Add(this.EndButton);
             this.Controls.Add(this.table_Button9);
             this.Controls.Add(this.table_Button6);
@@ -240,10 +241,10 @@
         private System.Windows.Forms.Button table_Button9;
         private System.Windows.Forms.Button table_Button6;
         private System.Windows.Forms.Button EndButton;
-        private System.Windows.Forms.CheckedListBox listBoxOrders;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox orderBox;
+        private System.Windows.Forms.ListBox totalOrderBox;
     }
 }
 
